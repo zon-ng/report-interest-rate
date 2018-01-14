@@ -43,8 +43,8 @@ public class BankAndFcRateComparisonView extends RateComparisonView {
 						+ "\t\t";
 			}
 			monthHeader += "Overal Average Rates";
-			bankRates += String.format("%,.2f", iRateReportResult.getAvgBankRate());
-			fcRates += String.format("%,.2f", iRateReportResult.getAvgFinancialCompanyRate());
+			bankRates += String.format("%,.2f", iRateReportResult.getAvgBankRate()) + (iRateReportResult.getAvgBankRate() > iRateReportResult.getAvgFinancialCompanyRate() ? "(Higher)" : "");
+			fcRates += String.format("%,.2f", iRateReportResult.getAvgFinancialCompanyRate()) + (iRateReportResult.getAvgFinancialCompanyRate() > iRateReportResult.getAvgBankRate() ? "(Higher)" : "");
 
 			System.out.println(monthHeader);
 			System.out.println(bankRates);
